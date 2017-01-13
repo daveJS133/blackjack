@@ -1,26 +1,28 @@
 package blackjack;
 import java.util.*;
-import Deck;
-import StandardCard;
-
+import templates.*;
+import behaviours.*;
 public class BlackJDeck extends Deck{
+
+private String suiteName;
 
   public BlackJDeck(){
    this.numOfSuits = 4;
    this.numInSuit = 13;
-   this.faceCards = True;
-   this.suits = new HashMap<String, setOfSuit>();
-   this.setOfSuit = new ArrayList<StandardCard>();
+   this.faceCards = true;
+   this.suits = new HashMap<String, ArrayList>();
+   this.setOfSuit = new ArrayList<Dealable>();
+   this.suiteName = "";
   }
 
    public void populateBlackJDeck(){
 
     for (int suitPointer = 0; suitPointer < numOfSuits; suitPointer++){
-      suitname = setSuitName(suitPointer);
+      String suitName = setSuitName(suitPointer);
     }
 
     for (int cardPointer = 0; cardPointer < numInSuit; cardPointer++){
-      card = new StandardCard(cardPointer+1);
+      StandardCard card = new StandardCard(cardPointer+1);
       setOfSuit.add(card);
     }
 
